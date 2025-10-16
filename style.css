@@ -6,6 +6,15 @@
     --light-border-color: #4960aa; 
 }*/
 
+/*:root {
+    --bg-color: #090909;
+    --nav-bar-color: #1b1b1b;
+    --text-color: #c8c8c8;        // CARBON THEME //
+    --hiden-text-color: #8c8c8c;
+    --border-color: #474a49;
+    --light-border-color: #666c6a;
+}*/
+
 :root {
     --bg-color: #2a1b3a;
     --nav-bar-color: #391d4d;
@@ -14,6 +23,7 @@
     --border-color: #693b84;
     --light-border-color: #984eaa;
 }
+
 
 body {
     background-color: var(--bg-color);
@@ -43,12 +53,13 @@ button {
 button:hover {
     opacity: 0.5;
     scale: 1.1;
+    rotate: -2.5deg;
 }
 
 button:active {
     color: var(--text-color);
     scale: 0.9;
-    rotate: 5deg;
+    rotate: 10deg;
 }
 
 .util-navigation-bar {
