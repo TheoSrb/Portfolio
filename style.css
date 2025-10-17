@@ -363,3 +363,114 @@ button:active {
       opacity: 0.65;
     }
   }
+
+/* ===================== */
+/* Responsive enhancements */
+/* ===================== */
+
+/* Base layout utilities */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Fluid, accessible typography */
+h1 { font-size: clamp(28px, 6vw, 48px); line-height: 1.15; }
+h2 { font-size: clamp(22px, 4.8vw, 32px); line-height: 1.2; }
+h3 { font-size: clamp(18px, 3.8vw, 24px); line-height: 1.25; }
+p, span { font-size: clamp(14px, 2.6vw, 18px); }
+button { font-size: clamp(14px, 2.8vw, 18px); }
+
+/* Constrain main content and make side paddings fluid */
+main {
+  max-width: 1200px;
+  margin: clamp(90px, 12vw, 150px) auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+}
+
+/* Home section should not overflow small screens */
+.home {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Allow wrapping where needed */
+.util-infos,
+.util-personnal-infos,
+.util-buttons-list { flex-wrap: wrap; }
+
+.util-buttons-list { gap: clamp(16px, 4vw, 30px); }
+.util-button-0, .util-button-1 { padding: 12px clamp(18px, 5vw, 30px); }
+
+/* Profile picture scales down nicely */
+.profile-picture {
+  width: min(160px, 40vw);
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Licenses: responsive grid */
+.licenses-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(16px, 4vw, 32px);
+}
+
+/* Projects: responsive grid of cards */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 4vw, 32px);
+}
+.projects > h2 { grid-column: 1 / -1; }
+.projects > div {
+  border: 2px solid var(--border-color);
+  background-color: rgba(57, 29, 77, 0.6);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+/* Skills: responsive grid */
+.skills .skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 4vw, 32px);
+}
+
+/* Navigation: spacing and horizontal scroll on small widths */
+.util-navigation-bar {
+  padding-right: clamp(12px, 4vw, 20px);
+  overflow-x: auto;
+}
+.util-navigation-bar .nav-content { gap: clamp(16px, 5vw, 50px); }
+
+/* Breakpoints */
+@media (max-width: 1200px) {
+  .util-navigation-bar { justify-content: center; }
+  .nav-content { transform: none; }
+}
+
+@media (min-width: 600px) {
+  .projects { grid-template-columns: repeat(2, 1fr); }
+  .skills .skills-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .projects { grid-template-columns: repeat(3, 1fr); }
+  .skills .skills-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Background animation: scale for small screens */
+@media (max-width: 768px) {
+  .container { --uib-size: 600px; --uib-speed: 38s; }
+}
+@media (max-width: 480px) {
+  .container { --uib-size: 420px; --uib-speed: 34s; }
+  .util-buttons-list { width: 100%; }
+  .util-buttons-list > * { flex: 1 1 auto; }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .slice::before,
+  .slice::after { animation: none; }
+}
