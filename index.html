@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Sarbach-Fischer Théo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-animate.css">
     <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Lexend+Tera:wght@100..900&family=Lexend:wght@100..900&family=Preahvihear&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
 </head>
 <body>
 
     <header>
         <div class="util-navigation-bar">
-            <div class="nav-content">
+            <div class="nav-left">
+                <button class="hamburger-button"><i class="fa-solid fa-bars"></i></button>
+                <div class="theme-container">
+                    <button class="theme-button"><i class="fa-solid fa-palette"></i></button>
+                    <div class="theme-menu">
+                        <button class="theme-option">Acidulé</button>
+                        <button class="theme-option">Carbone</button>
+                        <button class="theme-option">Citronnade</button>
+                        <button class="theme-option">Crépuscule</button>
+                        <button class="theme-option">Électrique</button>
+                        <button class="theme-option">Émeraude</button>
+                        <button class="theme-option">Fantôme</button>
+                        <button class="theme-option">Guimauve</button>
+                        <button class="theme-option">Incandescence</button>
+                        <button class="theme-option">Lunaire</button>
+                        <button class="theme-option">Ruby</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-center">
                 <button class="util-nav-0">Accueil</button>
                 <button class="util-nav-1">À propos</button>
                 <button class="util-nav-2">Parcours</button>
                 <button class="util-nav-3">Expériences</button>
                 <button class="util-nav-4">Certifications</button>
             </div>
+
+            <div class="hamburger-menu"></div>
         </div>
     </header>
+
 
     <div class="container">
         <div class="slice"></div>
@@ -31,13 +56,22 @@
         <div class="slice"></div>
     </div>
 
+    <div class="container-2">
+        <div class="slice-2"></div>
+        <div class="slice-2"></div>
+        <div class="slice-2"></div>
+        <div class="slice-2"></div>
+        <div class="slice-2"></div>
+        <div class="slice-2"></div>
+    </div>
+
     <main>
         <section class="home">
-            <h1>Salut, moi c'est Théo. <br><span class="home-description">Étudiant en informatique.</span></h1>
+            <h1 class="title-animate-when-see">Salut, moi c'est Théo. <br><span class="home-description">Étudiant en informatique.</span></h1>
 
-            <img src="" alt="" class="profile-picture">
+            <img src="" alt="" class="profile-picture picture-animate-when-see">
 
-            <div class="util-infos">
+            <div class="util-infos infos-animate-when-see">
                 <span class="util-info-0">Programmation</span>
                 <span class="util-info-1">Développement</span>
                 <span class="util-info-2">Cybersécurité</span>
@@ -45,130 +79,209 @@
 
             <br>
 
-            <div class="quotation">
+           <div class="util-social-medias social-animate-when-see">
+                <div class="social-list social-animate-when-see">
+                    <button class="social-0" onclick="window.open('https://www.linkedin.com/in/th%C3%A9o-sarbach-fischer-46573532b/', '_blank')"><i class="fa-brands fa-linkedin"></i></button>
+                    <button class="social-1" onclick="window.open('https://github.com/TheoS06', '_blank')"><i class="fa-brands fa-github"></i></button>
+                </div>
+            </div>
+
+            <div class="quotation quotation-animate-when-see">
                 <p class="quotation-text">"Depuis tout petit, j’ai toujours aimé innover, créer des objets et comprendre comment ils fonctionnent. Aujourd’hui, grâce au code, je peux enfin réunir mes deux passions : la création et la programmation."</p>
             </div>
 
             <br>
             <br>
 
-            <div class="util-personnal-infos">
+            <div class="util-personnal-infos personnal-animate-when-see">
                 <span class="current-studies-text"><i class="fa-solid fa-graduation-cap"></i> BTS SIO | 2ème année | Bac +2</span>
                 <span class="location-text"><i class="fa-solid fa-location-dot"></i> France | Strasbourg | Lycée Polyvalant René Cassin</span>
             </div>
 
             <br>
             <br>
+            <br>
 
             <div class="util-buttons-list">
-                <button class="util-button-0" onclick="downloadCV()"><i class="fa-solid fa-file-arrow-down"></i> Télécharger mon CV</button>
-                <button class="util-button-1"><i class="fa-regular fa-envelope"></i> Me contacter</button>
+                <button class="util-button-0 buttons-animate-when-see" onclick="downloadCV()"><i class="fa-solid fa-file-arrow-down"></i> Télécharger mon CV</button>
+                <button class="util-button-1 buttons-animate-when-see" onclick="copyEmail()"><i class="fa-regular fa-envelope"></i> Me contacter</button>
             </div>
         </section>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <section class="content">
+            <!-- <section class="licenses">
+                <h2 class="license-title">Mes Diplômes</h2>
+                <br>
 
-        <section class="licenses">
-            <h2 class="license-title">Mes Diplômes</h2>
-
-            <div class="licenses-content">
-                <div class="license-0">
-                    <h3>Baccalauréat Technologique STI2D</h3>
-                    <p>2024</p>
+                <div class="licenses-content">
+                    <div class="license-0">
+                        <h3>Baccalauréat Technologique STI2D</h3>
+                        <p>2024</p>
+                    </div>
+                    <div class="license-1">
+                        <h3>Baccalauréat Technologique STI2D</h3>
+                        <p>2024</p>
+                    </div>
+                    <div class="license-2">
+                        <h3>Baccalauréat Technologique STI2D</h3>
+                        <p>2024</p>
+                    </div>
                 </div>
-                <div class="license-1">
-                    <h3>Baccalauréat Technologique STI2D</h3>
-                    <p>2024</p>
+            </section>
+        -->
+    
+
+            <section class="projects">
+                <h2 class="project-title projects-animate-when-see">Mes Projets</h2>
+
+                <br>
+
+                <div class="projects-content projects-animate-when-see">
+                    <div class="project-0 projects-animate-when-see">
+                        <div class="project-first-lign-0">
+                            <span class="project-icon"><i class="devicon-git-plain"></i></span>
+                             <h3 class="project-title-0">Projet 1</h3>
+                        </div>
+                        <br><br><br><br><br>
+                        <p>.  .  .</p>
+    
+                        <div class="project-0-behind">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores vitae. Vitae dolorum, tenetur labore numquam explicabo ipsum, sequi, omnis eaque nesciunt molestias repellendus laudantium! Temporibus ut animi iste beatae corporis mollitia sit, accusantium adipisci ex molestias distinctio ullam vero.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-1 projects-animate-when-see">
+                        <div class="project-first-lign-1">
+                            <span class="project-icon"><i class="devicon-git-plain"></i></span>
+                            <h3 class="project-title-1">Projet 2</h3>
+                        </div>
+                        <br><br><br><br><br>
+                        <p>.  .  .</p>
+ 
+                        <div class="project-1-behind">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores vitae. Vitae dolorum, tenetur labore numquam explicabo ipsum, sequi, omnis eaque nesciunt molestias repellendus laudantium! Temporibus ut animi iste beatae corporis mollitia sit, accusantium adipisci ex molestias distinctio ullam vero.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-2 projects-animate-when-see">
+                        <div class="project-first-lign-2">
+                            <span class="project-icon"><i class="devicon-git-plain"></i></span>
+                            <h3 class="project-title-2">Projet 3</h3>
+                        </div>
+                        <br><br><br><br><br>
+                        <p>.  .  .</p>
+
+                        <div class="project-2-behind">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores vitae. Vitae dolorum, tenetur labore numquam explicabo ipsum, sequi, omnis eaque nesciunt molestias repellendus laudantium! Temporibus ut animi iste beatae corporis mollitia sit, accusantium adipisci ex molestias distinctio ullam vero.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="license-2">
-                    <h3>Baccalauréat Technologique STI2D</h3>
-                    <p>2024</p>
+            </section>
+
+            <br>
+            <br>
+
+            <section class="skills skills-animate-when-see">
+                <h2 class="skill-title">Mes Compétences</h2>
+
+                <br>
+
+                <h2 class="skill-title-dev">Développement</h2>
+
+                <br>
+
+                <div class="skills-list skills-animate-when-see">
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-brands fa-java"></i></span>
+                        <p class="skill-desc">Java</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-icon"><i class="devicon-javascript-plain"></i></span>
+                        <p class="skill-desc">Javascript</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-icon"> <i class="devicon-python-plain"></i></span>
+                        <p class="skill-desc">Python</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-brands fa-php"></i></span>
+                        <p class="skill-desc">PHP</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-brands fa-html5"></i></span>
+                        <p class="skill-desc">HTML</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-icon"><i class="devicon-css3-plain-wordmark"></i></span>
+                        <p class="skill-desc">CSS</p>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="projects">
-            <h2>Mes Projets</h2>
+                <h2 class="skill-title-dev">Cybersécurité</h2>
 
-            <div class="project-0">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, corrupti.</p>
-                <button class="project-0-button">Découvrir</button>
-            </div>
+                <br>
 
-            <div class="project-1">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, corrupti.</p>
-                <button class="project-1-button">Découvrir</button>
-            </div>
+                <div class="skills-list skills-animate-when-see">
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-regular fa-clipboard"></i></span>
+                        <p class="skill-desc">RGPD</p>
+                    </div>
+                    
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <p class="skill-desc">Osint</p>
+                    </div>
 
-            <div class="project-2">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, corrupti.</p>
-                <button class="project-2-button">Découvrir</button>
-            </div>
-        </section>
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-solid fa-eye"></i></span>
+                        <p class="skill-desc">Nmap</p>
+                    </div>
 
-        <br>
-
-        <section class="skills">
-            <h2>Mes Compétences</h2>
-
-            <div class="skills-list">
-                <div class="skinns-list-0">
-                    <h3>Développement</h3>
-
-                    <span>Java</span>
-                    <span>Javascript</span>
-                    <span>PHP</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-solid fa-v"></i></span>
+                        <p class="skill-desc">VirtualBox</p>
+                    </div>
                 </div>
-                <div class="skinns-list-1">
-                    <h3>Cybersécurité</h3>
 
-                    <span>RGPD</span>
-                    <span>Osint</span>
-                    <span>Wireshark</span>
-                    <span>Nmap</span>
-                    <span>VirtualBox</span>
+                <h2 class="skill-title-dev">Base de données</h2>
+
+                <br>
+
+                <div class="skills-list skills-animate-when-see">
+                    <div class="skill">
+                        <span class="skill-icon"><i class="devicon-mysql-original"></i></span>
+                        <p class="skill-desc">MySQL</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+                        <p class="skill-desc">Access</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="skill-icon"><i class="fa-solid fa-d"></i></span>
+                        <p class="skill-desc">Docuware</p>
+                    </div>
                 </div>
-                <div class="skinns-list-2">
-                    <h3>Base de données</h3>
+            </section>
 
-                    <span>MySQL</span>
-                    <span>Access</span>
-                    <span>Docuware</span>
-                </div>
-            </div>
-        </section>
+        </main>
 
-    </main>
+    </section>
 
 
 
-
-
-
-
-
-    <script>
-        function downloadCV() {
-            const link = document.createElement('a');
-            link.href = 'src/CV-Sarbach-Fischer-Théo.pdf';
-            link.download = 'CV-Theo-Sarbach-Fischer.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
+    <div id="copyMessage" class="copy-message">
+        📋 E-mail copié !
+    </div>
 
     
+    <script src="script.js"></script>
 </body>
 </html>
+
