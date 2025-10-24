@@ -728,7 +728,7 @@ main {
     border: none;
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1001px) {
     .hamburger-button,
     .hamburger-menu {
         display: none;
@@ -745,7 +745,7 @@ main {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .nav-center {
         display: none;
     }
@@ -827,7 +827,7 @@ main {
     }
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1001px) {
     .hamburger-button,
     .hamburger-menu {
         display: none;
