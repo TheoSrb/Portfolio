@@ -135,13 +135,19 @@
 
 @keyframes breathing-shadow {
   0% {
-    box-shadow: 0 0 2px var(--light-border-color);
+    box-shadow: 
+      0 0 2px var(--light-border-color),
+      inset 0 0 2px var(--light-border-color);
   }
   50% {
-    box-shadow: 0 0 50px var(--light-border-color);
+    box-shadow: 
+      0 0 25px var(--light-border-color),
+      inset 0 0 50px var(--light-border-color);
   }
   100% {
-    box-shadow: 0 0 2px var(--light-border-color);
+    box-shadow: 
+      0 0 2px var(--light-border-color),
+      inset 0 0 2px var(--light-border-color);
   }
 }
 
