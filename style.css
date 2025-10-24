@@ -28,7 +28,7 @@
   color: var(--text-color);
   padding: 10px 15px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 1.5em;
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
@@ -79,7 +79,7 @@ header {
     display: flex;
     justify-content: center; 
     align-items: center;
-    gap: 30px;
+    gap: 35px;
     flex: 1; 
 }
 
@@ -93,6 +93,7 @@ header {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Lexend', sans-serif;
+  font-weight: 600;
 }
 
 .theme-button {
