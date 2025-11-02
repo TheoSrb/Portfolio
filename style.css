@@ -11,19 +11,19 @@ html, body, .util-navigation-bar, .theme-menu, .hamburger-menu,
 
 
 :root {
---background-color: #0a0015;
---nav-color: #1c002d;
---text-color: #e9ddf4;
---hiden-text-color: #b8a5c9;
---border-color: #4a2b5f;
---light-border-color: #7d5a94;
---purple-dark: 42, 18, 66;
---purple-medium: 26, 10, 51;
---purple-base: 10, 0, 21;
---purple-border: 77, 42, 95;
---purple-card: 57, 29, 77;
---purple-hover: 93, 48, 122;
---purple-shadow: 29, 10, 49;
+--background-color: #000000;
+--nav-color: #000000;
+--text-color: #000000;
+--hiden-text-color: #000000;
+--border-color: #000000;
+--light-border-color: #000000;
+--purple-dark: 00, 00, 00;
+--purple-medium: 00, 00, 00;
+--purple-base: 00, 00, 00;
+--purple-border: 00, 00, 00;
+--purple-card: 00, 00, 00;
+--purple-hover: 00, 00, 00;
+--purple-shadow: 00, 00, 00;
 }
 
 * {
@@ -362,7 +362,7 @@ main {
 
 .social-0:hover, .social-1:hover {
   transform: scale(1.2);
-  box-shadow: 4px 4px 30px rgba(var(--purple-shadow), 1);
+  box-shadow: 0 0px 20px rgba(var(--purple-border), 0.85);
 }
 
 .social-0:active, .social-1:active {
@@ -382,6 +382,23 @@ main {
     font-style: italic;
     color: var(--hiden-text-color);
     line-height: 1.6;
+}
+
+.about {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(var(--purple-dark), 0.4);
+    border-left: 4px solid var(--border-color);
+    border-right: 4px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.about-text {
+    font-style: italic;
+    color: var(--hiden-text-color);
+    line-height: 2;
+    text-align: center;
 }
 
 .util-personnal-infos {
@@ -476,6 +493,245 @@ main {
     perspective: 1000px;
 }
 
+.main-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  margin-top: 100px;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+.careers, .passions {
+  flex: 1 1 500px;
+  height: auto; 
+  min-width: 300px;
+  padding: 60px 20px;
+}
+
+.careers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.career-title {
+    color: var(--hiden-text-color);
+    padding-top: 25px;
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.career-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%; 
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-top: 60px;
+}
+
+.career-content .circle-full, .career-content .circle {
+    border: 4px solid var(--border-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.career-content .circle-half {
+    border: 4px solid var(--border-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to top, rgba(var(--purple-card), 0.9) 50%, transparent 50%);
+}
+
+.career-content .circle-full {
+    background-color: var(--light-border-color);
+}
+
+.career-content .little-bar {
+    border: 2px solid var(--border-color);
+    width: 4px;
+    height: 75px;
+}
+
+.career-content .bar {
+    border: 2px solid var(--border-color);
+    width: 4px;
+    height: 150px;
+}
+
+.career-content .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    height: 120px;
+    width: 100%;
+}
+
+.career-content .text h3 {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.4;
+}
+
+.passions {
+  padding: 55px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.passion-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.passion-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px;
+    width: 100%;
+
+    padding-top: 100px;
+}
+
+.passion {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(var(--purple-card), 0.6);
+  box-shadow: 2px 2px 10px rgba(var(--purple-shadow), 1);
+  border-radius: 15px;
+  padding: 25px 35px;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.4s ease;
+  border-top: 4px solid var(--border-color);
+}
+
+.passion:hover {
+    background-color: rgba(var(--purple-hover), 0.5);
+    transform: scale(1.035);
+    border-color: var(--light-border-color);
+}
+
+.passion-icon {
+    background-color: rgba(var(--purple-hover), 0.25);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.passion-icon i {
+    color: var(--light-border-color);
+    font-size: 1.5rem;
+}
+
+.passion-text h3 {
+    color: white;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.passion-text p {
+    color: var(--hiden-text-color);
+    margin: 6px 0 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.passion-text h3, .passion-text p {
+    cursor: text;
+}
+
+.passions-2 {
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+}
+
+.passions-2 h3 {
+    color: var(--hiden-text-color);
+    opacity: 0.75;
+    font-size: 1.5em;
+}
+
+.license-date {
+    font-style: italic;
+    color: var(--hiden-text-color);
+    line-height: 1.6;
+}
+
+
+.certifications {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.certifications-title {
+    position: relative;
+    left: -50px; 
+}
+
+.certifications-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-top: 60px;
+  max-width: 1000px;
+}
+
+.certifications-content .certif {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(var(--purple-card), 0.6);
+    box-shadow: 2px 2px 10px rgba(var(--purple-shadow), 1);
+    border: 4px solid var(--border-color);
+    border-radius: 10%;
+    animation: breathing-shadow-project 5s ease-in-out infinite;
+    transition: all 0.6s ease;
+}
+
+.certif p {
+    position: relative;
+    text-align: center;
+    color: var(--light-border-color);
+    font-size: 1.25em;
+    top: 50px;
+}
+
+.certifications-content .certif:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    border-color: var(--light-border-color);
+    background-color: rgba(var(--purple-border), 0.6);
+}
+
 .project-first-lign-0, .project-first-lign-1, .project-first-lign-2 {
     display: flex;
     align-items: center;
@@ -563,6 +819,69 @@ main {
 .project-2.flipped .project-2-behind {
     opacity: 1;
 }
+
+
+.experiences-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-top: 200px;
+
+    gap: 80px;
+    width: 95vw;
+}
+
+.experiences-list .exp {
+  background-color: rgba(var(--purple-card), 0.75);
+  width: 550px;
+  height: 800px;
+  border-top: 10px solid var(--border-color);
+  border-bottom: 10px solid var(--border-color);
+  border-radius: 10%;
+  text-align: center;
+  padding-top: 50px;
+  position: relative;
+  overflow: visible;
+  z-index: 3;
+  animation: breathing-shadow-exp 5s ease-in-out infinite;
+}
+
+
+.exp .date, .exp .location {
+    position: relative;
+    bottom: 75px;
+}
+
+.exp h2 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.exp p {
+    text-align: center;
+    font-size: 1.15em;
+    width: 400px;
+    margin: auto;
+}
+
+.hidden-text-exp {
+    color: var(--hiden-text-color);
+    opacity: 0.8;
+}
+
+.compagny-logo {
+    position: relative;
+    transform: scale(0.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 8px solid var(--border-color);
+    border-bottom: 8px solid var(--border-color);
+    bottom: 25px;
+}
+
+
 
 .skills {
     padding: 60px 20px;
@@ -741,6 +1060,53 @@ main {
     transition: all 0.3s ease;
     border: none;
 }
+
+@media screen and (max-width: 2000px) {
+  .main-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .careers, .passions {
+    max-width: 90%;
+  }
+
+  .passions {
+    align-items: center; 
+    text-align: center;
+  }
+
+  .passion-list {
+    justify-content: center; 
+  }
+
+  .certifications-content {
+    gap: 30px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .passion {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .passion-icon {
+    margin-bottom: 10px;
+  }
+
+  .certifications-content .certif {
+    width: 180px;
+    height: 180px;
+  }
+
+  .career-content {
+    width: 100%;
+  }
+}
+
+
 
 @media (min-width: 1001px) {
     .hamburger-button,

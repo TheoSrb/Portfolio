@@ -1,49 +1,54 @@
+:root {
+  --animationTime: 3s;
+  --animationTimeLong: 5s;
+}
+
 .buttons-animate-when-see.visible {
   position: relative;
   animation: 
     showButtons 1.5s ease-in-out forwards,
-    glow 3s ease-in-out;
+    glow var(--animationTime) ease-in-out;
 }
 
 .projects-animate-when-see.visible {
-  animation: regroup-projects 3s ease-in-out;
+  animation: regroup-projects var(--animationTime) ease-in-out;
 }
 
 .skills-animate-when-see.visible {
-  animation: regroup-skills 3s ease-in-out;
+  animation: regroup-skills var(--animationTime) ease-in-out;
 }
 
 .projects-animate-when-see.visible .project-0,
 .projects-animate-when-see.visible .project-1,
 .projects-animate-when-see.visible .project-2 {
-  animation: glow 4s ease-in-out;
+  animation: glow var(--animationTime) ease-in-out;
 }
 
 .title-animate-when-see.visible {
   position: relative;
-  animation: slide-bottom 3s ease-in-out;
+  animation: slide-bottom var(--animationTime) ease-in-out;
 }
 
 .picture-animate-when-see.visible {
-  animation: breathing-shadow 5s ease-in-out infinite,change-picture-size 3s ease-in-out 1 forwards;
+  animation: breathing-shadow var(--animationTimeLong) ease-in-out infinite,change-picture-size var(--animationTime) ease-in-out 1 forwards;
 }
 
 .infos-animate-when-see.visible {
-  animation: regroup-div 3s ease-in-out;
+  animation: regroup-div var(--animationTime) ease-in-out;
 }
 
 .social-animate-when-see.visible {
-  animation: regroup-social 3s ease-in-out;
+  animation: regroup-social var(--animationTime) ease-in-out;
 }
 
 .quotation-animate-when-see.visible {
   position: relative;
-  animation: slide-top 3s ease-in-out;
+  animation: slide-top var(--animationTime) ease-in-out;
 }
 
 .personnal-animate-when-see.visible {
     position: relative;
-    animation: regroup-personnal 3s ease-in-out;
+    animation: regroup-personnal var(--animationTime) ease-in-out;
 }
 
 @keyframes orbit {
@@ -154,6 +159,27 @@
   }
   100% {
     box-shadow: 0px 0px 2px var(--border-color);
+  }
+}
+
+@keyframes breathing-shadow-exp {
+  0% {
+    box-shadow: 0px 0px 2px var(--border-color);
+  }
+  50% {
+    box-shadow: 2px 2px 100px var(--border-color);
+  }
+  100% {
+    box-shadow: 0px 0px 2px var(--border-color);
+  }
+}
+
+@keyframes show-careers {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
