@@ -524,6 +524,11 @@ main {
     margin-bottom: 40px;
 }
 
+.tech-what-is {
+    color: var(--hiden-text-color);
+    padding-top: 25px;
+}
+
 .career-content {
   display: flex;
   flex-direction: column;
