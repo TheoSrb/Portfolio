@@ -8,7 +8,7 @@ const THEMES = {
         '--object-background-color': '#232c47',
         '--object-background-color-rgb': '35, 44, 71',
         '--hiden-text-color': '#7984a5',
-        '--image-alt-bg-opacity': '0.6'
+        '--image-alt-bg': '238, 238, 238'
     },
     light: {
         '--navigation-bar-background-color': '#e8ecf5',
@@ -19,7 +19,7 @@ const THEMES = {
         '--object-background-color': '#d4dbe8',
         '--object-background-color-rgb': '212, 219, 232',
         '--hiden-text-color': '#5a6c8f',
-        '--image-alt-bg-opacity': '0.2'
+        '--image-alt-bg': '44, 62, 80'
     }
 };
 

@@ -843,7 +843,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     color: var(--foot-content-banner-color);
-    background: rgba(0, 0, 0, var(--image-alt-bg-opacity));
+    background: rgb(var(--image-alt-bg), 0.5);
     padding: 6px 12px;
     border-radius: 10px;
     font-size: 1.5em;
