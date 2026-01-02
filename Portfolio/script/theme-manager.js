@@ -7,7 +7,8 @@ const THEMES = {
         '--foot-content-banner-color': '#eeeeee',
         '--object-background-color': '#232c47',
         '--object-background-color-rgb': '35, 44, 71',
-        '--hiden-text-color': '#7984a5'
+        '--hiden-text-color': '#7984a5',
+        '--image-alt-bg-opacity': '0.6'
     },
     light: {
         '--navigation-bar-background-color': '#e8ecf5',
@@ -17,7 +18,8 @@ const THEMES = {
         '--foot-content-banner-color': '#2c3e50',
         '--object-background-color': '#d4dbe8',
         '--object-background-color-rgb': '212, 219, 232',
-        '--hiden-text-color': '#5a6c8f'
+        '--hiden-text-color': '#5a6c8f',
+        '--image-alt-bg-opacity': '0.2'
     }
 };
 
