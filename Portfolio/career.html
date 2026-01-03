@@ -34,6 +34,9 @@
             <li><a href="skills.html"><i class="fa-solid fa-clipboard-list"></i> Compétences</a></li>
             <li><a href="techno.html"><i class="fa-solid fa-microchip"></i> Veille Technologique</a></li>
         </ul>
+        <div class="copyright">
+            <p>Copyright 2026 © <span class="name">SARBACH-FISCHER Théo</span></p>
+        </div>
     </nav>
 
     
@@ -73,13 +76,24 @@
                 <img id="stage-logo" src="">
                 <h2 id="stage-title">Stage 1ère année</h2>
                 <br>
-                <p class="stage-company"><strong>Entreprise :</strong> <span id="stage-company">Nom de l'entreprise</span></p>
+                <p class="stage-company"><i class="fa-solid fa-building"></i> <strong>Entreprise :</strong> <span id="stage-company">Nom de l'entreprise</span></p>
                 <br>
-                <p class="stage-missions"><strong>Missions Principales :</strong> <br> - Test <br> - Test</p>
+                <p class="stage-missions"><i class="fa-solid fa-clipboard-list"></i> <strong>Missions Principales :</strong> <br> - <br> - </p>
                 <br>
-                <p><strong>Compétences :</strong> <span id="stage-skills">Compétences acquises</span></p>
+                <p class="stage-missions-2"><i class="fa-solid fa-list"></i><strong>Réalisations Annexes :</strong> <br> - <br> - </p>
                 <br>
-                <p><strong>Durée :</strong> <span id="stage-duration">Durée du stage</span></p>
+                <p><i class="fa-solid fa-check-double"></i><strong>Compétences :</strong> <span id="stage-skills">Compétences acquises</span></p>
+                <br>
+                <p class="stage-tools"><i class="fa-solid fa-screwdriver-wrench"></i><strong>Outils utilisés :</strong> <span id="stage-tools">Outils utilisés</span></p>
+                <br>
+
+                <p><i class="fa-solid fa-clock"></i><strong>Durée :</strong> <span id="stage-duration">Durée du stage</span></p>
+
+                <br>
+                
+                <div class="stage-work-code-btn" id="stage-work-code-btn">
+                    <button >Voir le travail effectué</button>
+                </div>
 
                 <div class="stage-details">
                     <p id="stage-period"></p>
@@ -107,11 +121,18 @@
                     "Développement de logiciels en Java permettant de lister les utilisateurs ayant des permissions sur des fichiers potentiellement sensibles.",
                     "Installation et configuration complète des ordinateurs pour certains employés, afin qu’ils puissent se connecter à l’intranet."
                 ],
-                skills: "Java, Docuware, Windows",
+                missions_2: [
+                    "Approfondissement de certains chapitres du langage Java durant mon temps libre.",
+                    "Présentation et prise en main des bases de DocuWare, réalisée de manière encadrée."
+                ],
+                skills: "Java, Windows",
+                tools: "IntelliJ, CMD, Docuware",
                 duration: "5 semaines",
                 logo: "src/bongard-logo.jpg",
                 period: "02/06/2025 – 04/07/2025",
-                location: "Holtzheim, France"
+                location: "Holtzheim, France",
+                link: "https://www.bongard.fr/",
+                work_link: "https://github.com/TheoSrb/Logiciels-Fichiers"
             },
             stage2: {
                 title: "Stage 2ème année - BTS SIO",
@@ -120,11 +141,17 @@
                     "[X]",
                     "[X]"
                 ],
+                missions_2: [
+                    "[X]",
+                    "[X]"
+                ],
                 skills: "[X]",
+                tools: "[X]",
                 duration: "5 semaines",
                 logo: "src/bongard-logo.jpg",
                 period: "12/01/2026 – 13/02/2026",
-                location: "Holtzheim, France"
+                location: "Holtzheim, France",
+                work_link: ""
             }
         };
 
@@ -169,6 +196,8 @@
         function showStage(index) {
             const stage = stages[items[index].dataset.content];
             const content = document.querySelector('.carousel-content');
+            const logo = document.getElementById('stage-logo');
+            const work = document.getElementById('stage-work-code-btn');
 
             content.classList.add('fade-out');
             content.classList.remove('fade-in');
@@ -177,19 +206,42 @@
                 document.getElementById('stage-title').textContent = stage.title;
                 document.getElementById('stage-company').textContent = stage.company;
 
-                let missionsHtml = "<strong>Missions Principales :</strong><br>";
+                let missionsHtml = '<i class="fa-solid fa-clipboard-list"></i> <strong>Missions Principales :</strong><br>';
                 stage.missions.forEach(mission => {
                     missionsHtml += "- " + mission + "<br>";
                 });
                 document.querySelector('.stage-missions').innerHTML = missionsHtml;
 
+                let missions2Html = '<i class="fa-solid fa-list"></i><strong>Réalisations Annexes :</strong><br>';
+                stage.missions_2.forEach(mission_2 => {
+                    missions2Html += "- " + mission_2 + "<br>";
+                });
+                document.querySelector('.stage-missions-2').innerHTML = missions2Html;
+
                 document.getElementById('stage-skills').textContent = stage.skills;
+                document.getElementById('stage-tools').textContent = stage.tools;
                 document.getElementById('stage-duration').textContent = stage.duration;
-                document.getElementById('stage-logo').src = stage.logo;
+
+                logo.src = stage.logo;
+                logo.style.cursor = stage.link ? 'pointer' : 'default';
+
+                logo.onclick = null;
+                if (stage.link) {
+                    logo.onclick = () => {
+                        window.open(stage.link, '_blank');
+                    };
+                }
+
+                work.onclick = null;
+                if (stage.work_link) {
+                    work.onclick = () => {
+                        window.open(stage.work_link, '_blank');
+                    };
+                }
 
                 document.getElementById('stage-period').innerHTML =
                     stage.period
-                        ? stage.period + ' <i class="fa-solid fa-clock"></i>'
+                        ? stage.period + ' <i class="fa-solid fa-hourglass"></i>'
                         : '';
 
                 document.getElementById('stage-location').innerHTML =
@@ -201,6 +253,7 @@
                 content.classList.add('fade-in');
             }, 300);
         }
+
 
         document.querySelector('.prev').addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + items.length) % items.length;
