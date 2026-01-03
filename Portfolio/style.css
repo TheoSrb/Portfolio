@@ -587,7 +587,8 @@ body {
 
 .project:hover {
     transform: translateY(-10px);
-    box-shadow: -2.5px 10px 15px 0px var(--hiden-text-color);
+    box-shadow: 0px 0px 15px 0px var(--hiden-text-color);
+    background-color: var(--saturate-object-color);
 }
 
 .project-header {
@@ -1125,6 +1126,8 @@ body {
     width: 10px;
     height: 10px;
     border: none;
+
+    transition: all 0.3s ease-in-out;
 }
 
 .skill:hover {
@@ -1156,6 +1159,14 @@ body {
     background-color: var(--object-background-color);
     padding: 25px;
     border-radius: 50%;
+}
+
+.skill:hover .skill-level-0,
+.skill:hover .skill-level-1,
+.skill:hover .skill-level-2 {
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--navigation-bar-background-color);
 }
 
 /* =============== PAGE VEILLE TECHNO =============== */

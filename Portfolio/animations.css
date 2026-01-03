@@ -547,14 +547,17 @@
     }
 }
 
-@keyframes skillCardIntro {
+@keyframes skillOpacityIntro {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes skillTransformIntro {
     from {
-        opacity: 0;
         transform: scale(0.9) translateY(15px);
         filter: blur(3px);
     }
     to {
-        opacity: 1;
         transform: scale(1) translateY(0);
         filter: blur(0);
     }
@@ -571,9 +574,26 @@
     }
 }
 
+@keyframes skillWave {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-50px);
+        opacity: 0.1;
+    }
+}
+
+.skills h2,
+.skills-list .skill {
+    opacity: 1;
+    transform: none;
+}
+
 .skills h2 {
     opacity: 0;
-    animation: skillsTitleIntro 0.4s ease-out forwards;
+    animation: skillsTitleIntro 0.35s ease-out forwards;
 }
 
 .skills h2:nth-of-type(1) { animation-delay: 0.1s; }
@@ -583,23 +603,25 @@
 
 .skills h2 + .skills-list .skill {
     opacity: 0;
-    animation: skillCardIntro 0.35s ease-out forwards;
+    animation:
+        skillOpacityIntro 0.25s ease-out forwards,
+        skillTransformIntro 0.25s ease-out;
 }
 
 .skills h2:nth-of-type(1) + .skills-list .skill {
-    animation-delay: calc(0.3s + (var(--i) * 0.08s));
+    animation-delay: calc(0.3s + (var(--i) * 0.07s));
 }
 
 .skills h2:nth-of-type(2) + .skills-list .skill {
-    animation-delay: calc(1.4s + (var(--i) * 0.08s));
+    animation-delay: calc(1.4s + (var(--i) * 0.07s));
 }
 
 .skills h2:nth-of-type(3) + .skills-list .skill {
-    animation-delay: calc(2.5s + (var(--i) * 0.08s));
+    animation-delay: calc(2.5s + (var(--i) * 0.07s));
 }
 
 .skills h2:nth-of-type(4) + .skills-list .skill {
-    animation-delay: calc(3.6s + (var(--i) * 0.08s));
+    animation-delay: calc(3.6s + (var(--i) * 0.07s));
 }
 
 .skills-list .skill:nth-child(1)  { --i: 0; }
@@ -630,5 +652,29 @@
     animation: skillLevelPop 0.2s ease-out forwards;
     animation-delay: 0.1s;
 }
+
+.skill {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.skill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: currentColor;
+    opacity: 0;
+    animation: skillWave 3.5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.15s);
+    pointer-events: none;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+
+
 
 
