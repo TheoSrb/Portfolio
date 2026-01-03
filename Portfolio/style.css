@@ -9,6 +9,7 @@
     --content-text-color: #eeeeee;
     --foot-content-banner-color: #eeeeee;
     --object-background-color: #232c47;
+    --saturate-object-color: #1f2c52;
     --hiden-text-color: #7984a5;
     --href-text-color: #3565f3;
     --object-background-color-rgb: 35, 44, 71;
@@ -387,6 +388,8 @@ body {
     z-index: 2000;
 }
 
+/* =============== PAGE À PROPOS =============== */
+
 .about, .projects, .career, .skills, .techno {
     margin: clamp(15px, 3vw, 35px);
 }
@@ -496,13 +499,13 @@ body {
     padding: 25px 35px;
     width: 100%;
     max-width: 500px;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease-in-out;
     opacity: 1;
-    transform: translateY(0) scale(1);
 }
 
 .passion-1:hover, .passion-2:hover, .passion-3:hover, .passion-4:hover {
-    transform: scale(1.035);
+    transform: translateY(-10px);
+    background-color: var(--saturate-object-color);
 }
 
 .passion-title {
@@ -547,7 +550,7 @@ body {
     line-height: 1.5;
 }
 
-
+/* =============== PAGE PROJETS =============== */
 
 
 .pro-projects, .pers-projects {
@@ -842,7 +845,7 @@ body {
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    color: var(--foot-content-banner-color);
+    color: var(--object-background-color);
     background: rgb(var(--image-alt-bg), 0.5);
     padding: 6px 12px;
     border-radius: 10px;
@@ -852,6 +855,7 @@ body {
     text-align: center;
 }
 
+/* =============== PAGE EXPERIENCES =============== */
 
 .carousel-container {
     display: flex;
@@ -1036,98 +1040,125 @@ body {
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-.dev-skills, .cyber-skills {
-    background-color: var(--content-text-color);
-    color: var(--object-background-color);
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 750px;
-}
 
-.dev-skills h4::after {
-    content: '';
-    display: block;
-    width: min(135%, 100vw - 80px);
-    height: 4px;    
-    background-color: var(--hiden-text-color); 
-    margin-top: 0.35em;
-    border-radius: 2px;
-}
 
-.cyber-skills h4::after {
-    content: '';
-    display: block;
-    width: min(135%, 100vw - 80px);
-    height: 4px;   
-    background-color: var(--hiden-text-color); 
-    margin-top: 0.35em;
-    border-radius: 2px;
-    margin-left: -70px; 
-}
+/* =============== PAGE COMPÉTENCES =============== */
 
-.cyber-skills {
-    margin-left: auto;
-    text-align: right;
-}
-
-.skills-carousel {
+.skills h2 {
     position: relative;
-    width: 110%;
+    color: var(--foot-content-banner-color);
+    font-size: 2em;
+}
+
+.skills h2::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 200px;
+    height: 3px;
+    background-color: var(--hiden-text-color);
+}
+
+.skill-0, .skill-1, .skill-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.skill-0 p, .skill-1 p, .skill-2 p {
+    color: var(--hiden-text-color);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.skill-level-0, .skill-level-1, .skill-level-2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid var(--foot-content-banner-color);
+}
+
+.skill-level-0 {
+    background-color: purple;
+}
+
+.skill-level-1 {
+    background-color: green;
+}
+
+.skill-level-2 {
+    background-color: blue;
+}
+
+.skills-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    position: relative;
+    background-color: rgb(var(--object-background-color-rgb), 0.25);
+    width: 200px;
     height: 200px;
-    overflow: hidden;
     display: flex;
-    align-items: center;
-    margin: 20px 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.skills-track {
-    display: flex;
-    gap: 40px;
-    animation: horizontalScroll 40s linear infinite;
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--object-background-color);
-    border: 2px solid var(--hiden-text-color);
+    flex-direction: column;
     border-radius: 15px;
-    padding: 15px 20px;
-    min-width: 120px;
-    transition: transform 0.4s ease, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 30px 4px var(--object-background-color);
 }
 
-.skill-item:hover {
-    transform: scale(1.1) translateY(-15px);
-    box-shadow: 0 0 15px rgba(255,255,255,0.5);
-    border-color: var(--content-text-color);
-    cursor: pointer;
-    background-color: var(--navigation-bar-background-color);
+.skill .skill-level-0,
+.skill .skill-level-1,
+.skill .skill-level-2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border: none;
 }
 
-.skill-item i {
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--content-text-color);
-    margin-bottom: 10px;
+.skill:hover {
+    transform: scale(1.1);
+    background-color: var(--foot-content-banner-color);
+    color: var(--saturate-object-color);
+    box-shadow: 0px 0px 15px 4px var(--hiden-text-color);
 }
 
-.skill-item p {
-    color: var(--hiden-text-color);
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
+.skill p {
+    border-top: 2px solid rgb(var(--hidden-text-color-rgb), 0.35);
+    width: 100%;
     text-align: center;
-    margin: 0;
-    margin-top: 5px;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
-@keyframes horizontalScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.skill img {
+    width: 100px;
+    height: 100px;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(var(--object-background-color-rgb), 0.1);
+    border-radius: 50%;
 }
+
+.skill:hover img {
+    background-color: var(--object-background-color);
+    padding: 25px;
+    border-radius: 50%;
+}
+
+/* =============== PAGE VEILLE TECHNO =============== */
 
 .techno {
     position: relative; 
@@ -1440,11 +1471,6 @@ h3 {
         max-width: 100%;
         margin-top: 30px;
     }
-    
-    .cyber-skills {
-        margin-left: 0;
-        margin-top: 30px;
-    }
 }
 
 @media (max-width: 1284px) {
@@ -1614,12 +1640,6 @@ h3 {
     .carousel-item {
         max-width: 100%;
     }
-    
-    .cyber-skills h4::after {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-    }
 }
 
 @media (max-width: 700px) {
@@ -1627,20 +1647,24 @@ h3 {
         display: block;
     }
 
+    .skills-list {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skills h2 {
+        text-align: center;
+    }
+
+    .skills h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+    }
+
     .carousel-container {
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .skills-carousel {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 120%;
-
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     .carousel {
@@ -1824,6 +1848,15 @@ h3 {
     .back-button {
         font-size: 1.5em;
         margin-bottom: 325px;
+    }
+}
+
+@media (max-width: 430px) { 
+    .skill-0, .skill-1, .skill-2 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
 
