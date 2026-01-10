@@ -1566,6 +1566,12 @@ h3 {
     }
 }
 
+@media (max-width: 1824px) { 
+    .util-personnal-infos {
+        justify-content: flex-start;
+    }
+}
+
 @media (max-width: 1400px) {
     .tech-content {
         position: static;
